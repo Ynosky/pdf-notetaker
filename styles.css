@@ -1,0 +1,83 @@
+/* 全体の基本設定 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  /* 分割コンテナ */
+  #split-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* 左側：PDF表示領域 */
+  #pdf-section {
+    flex: 1;
+    /* 余計なスクロールを防ぐためoverflowはautoに */
+    overflow: auto;
+    padding: 10px;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+  }
+  
+  /* 右側：ドキュメント領域 */
+  #doc-section {
+    flex: 1;
+    /* 全体のスクロールは無効、内部のノートエディタでスクロール */
+    overflow: hidden;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  /* PDFビューア内部 */
+  #pdf-viewer {
+    overflow: auto;
+    height: 100%;
+  }
+  
+  /* ノートエディタ内部（Quill用） */
+  #note-editor {
+    width: 793px;         /* A4用紙の幅 */
+    min-height: 1123px;    /* A4用紙の高さ */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: auto;       /* 内部のみスクロール */
+  }
+  
+  /* PDFページのスタイル */
+  .page-container {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+  }
+  .page-container h3 {
+    margin: 0 0 10px;
+    text-align: center;
+    color: #555;
+  }
+  
+  /* ページブレイク用カスタムブロット */
+  .page-break-container {
+    margin: 20px 0;
+    text-align: center;
+  }
+  .page-break-container .page-break {
+    border: none;
+    border-top: 2px dashed #999;
+    margin: 10px auto;
+    width: 80%;
+  }
+  
+  /* Gutter styling for Split.js */
+  .gutter {
+    background-color: #ccc;
+    cursor: col-resize;
+    width: 10px;
+  }
